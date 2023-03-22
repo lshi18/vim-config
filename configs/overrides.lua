@@ -12,11 +12,13 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "terraform",
+    "yaml",
+    "hcl",
   },
   indent = {
     enable = true,
     disable = {
-      "python"
+      "python",
     },
   },
   highlight = {
@@ -37,7 +39,9 @@ M.mason = {
     "typescript-language-server",
     "deno",
     "prettier",
-    "terraform-ls",
+    "yaml-language-server",
+    "rust-analyzer",
+    "gopls",
   },
 }
 

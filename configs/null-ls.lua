@@ -10,7 +10,12 @@ local sources = {
 
   -- webdev stuff
   b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-  b.formatting.prettier, --.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
+  b.formatting.prettier.with {
+    filetypes = {
+      "html", --[["markdown", ]]
+      "css",
+    },
+  }, -- so prettier works only on these filetypes
 
   -- Lua
   b.formatting.stylua,
@@ -20,8 +25,11 @@ local sources = {
 
   -- terraform
   b.diagnostics.terraform_validate,
-  -- b.formatting.hclfmt,
   b.formatting.terraform_fmt,
+
+  -- rustfmt
+  b.formatting.rustfmt,
+  -- yaml (after installed via MasonInstall)
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -31,6 +39,7 @@ null_ls.setup {
   sources = sources,
 
   -- setup sync formatting on save
+  -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
       vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }

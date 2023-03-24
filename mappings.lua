@@ -7,11 +7,14 @@ M.general = {
     ["<leader>b"] = { "<cmd> noh <CR>", "noh", opts = { nowait = false } },
     ["<leader>h"] = { "<cmd> noh <CR>", "noh", opts = { nowait = false } },
 
+    ["<leader>qq"] = { "<cmd> q <CR>", "noh", opts = { nowait = false } },
+
     ["<leader>bb"] = { "<cmd> Telescope buffers <CR>", "list buffers", opt = { nowait = false } },
     ["<leader>bs"] = { "<cmd> w <CR>", "save buffer", opts = { nowait = false } },
     ["<leader>bn"] = { "<cmd> enew <CR>", "new buffer", opts = { nowait = false } },
     ["<leader>bk"] = { "<cmd> bp<bar>sp<bar>bn<bar>bd<CR>", "quit a buffer", opts = { nowait = false } },
     ["<leader>bK"] = { "<cmd> bp<bar>sp<bar>bn<bar>bd! <CR>", "quit(!) a buffer", opts = { nowait = false } },
+    ["<leader>be"] = { "<cmd> bufdo e <CR>", "force read buffer", opts = { nowait = false } },
 
     ["<leader>wwl"] = { "<C-l>", "window right", opts = { nowait = false, remap = true } },
     ["<leader>wwh"] = { "<C-h>", "window left", opts = { nowait = false, remap = true } },
@@ -26,8 +29,21 @@ M.general = {
 
     ["<leader>tt"] = { "<C-n>", "toggle nvtreesitter", opts = { nowait = false, remap = true } },
 
-    ["<leader>,"] = { "<C-i>", "go forward", opts = { nowait = false, remap = true } },
-    ["<leader>."] = { "<C-o>", "go back", opts = { nowait = false, remap = true } },
+    ["<leader>."] = { "<C-i>", "go forward", opts = { nowait = false, remap = true } },
+    ["<leader>,"] = { "<C-o>", "go back", opts = { nowait = false, remap = true } },
+    ["<leader>tjl"] = { "<cmd> Telescope jumplist <CR>", "jumplist", opts = { nowait = false } },
+
+    ["<leader>tws"] = { "<cmd> Telescope spell_suggest <CR>", "spell suggest", opts = { nowait = false } },
+
+    ["zss"] = { "<cmd> :setlocal spell spelllang=en_us <CR>", "switches on spell checking" },
+    ["zsd"] = { "<cmd> :set nospell <CR>", "switches off spell checking" },
+
+    ["<leader>ld"] = { "<cmd> lua vim.lsp.buf.hover() <CR>", "lsp hover document", opts = { nowait = true } },
+    ["<leader>lfd"] = {
+      "<cmd> lua vim.lsp.buf.hover() <CR><cmd> lua vim.lsp.buf.hover() <CR>",
+      "lsp hover document",
+      opts = { nowait = true },
+    },
   },
   t = {
     ["<Esc><Esc>"] = { "<C-x>", "escape terminal mode", opts = { nowait = false, remap = true } },

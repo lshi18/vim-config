@@ -25,10 +25,13 @@ local sources = {
 
   -- terraform
   b.diagnostics.terraform_validate,
-  b.formatting.terraform_fmt,
+  b.formatting.terraform_fmt.with { extra_filetypes = { "hcl" } },
 
   -- rustfmt
   b.formatting.rustfmt,
+
+  -- golang
+  b.formatting.gofmt,
   -- yaml (after installed via MasonInstall)
 }
 

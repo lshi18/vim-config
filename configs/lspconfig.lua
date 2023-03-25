@@ -16,19 +16,19 @@ end
 --
 -- lspconfig.pyright.setup { blabla}
 --
--- lspconfig.rust_analyzer.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
---
---   settings = {
---     ["rust-analyzer"] = {
---       inlayHints = {
---         enable = true,
---
---         parameterHints = {
---           enable = true,
---         },
---       },
---     },
---   },
--- }
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+
+  settings = {
+    ["rust-analyzer"] = {
+      inlayHints = {
+        enable = true,
+
+        parameterHints = {
+          enable = true,
+        },
+      },
+    },
+  },
+}

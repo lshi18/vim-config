@@ -5,7 +5,23 @@ M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = false } },
     ["<leader>b"] = { "<cmd> noh <CR>", "noh", opts = { nowait = false } },
-    ["<leader>h"] = { "<cmd> noh <CR>", "noh", opts = { nowait = false } },
+    ["<leader>h"] = {
+      function()
+        return "<cmd> " .. vim.v.count1 .. "ToggleTerm direction=horizontal<CR>"
+      end,
+      --  "<cmd> echo" .. vim.v.count1 .. "<CR>",
+      "toggle horizontal terminal",
+      opts = { nowait = false, expr = true, replace_keycodes = true },
+    },
+    ["<leader>v"] = {
+      function()
+        return "<cmd> " .. vim.v.count1 .. "ToggleTerm direction=vertical<CR>"
+      end,
+      --  "<cmd> echo" .. vim.v.count1 .. "<CR>",
+      "toggle vertical terminal",
+      opts = { nowait = false, expr = true, replace_keycodes = true },
+    },
+    ["<leader>ta"] = { "<cmd> ToggleTermToggleAll<CR>", "toggle all terminal", opts = { nowait = false } },
 
     ["<leader>qq"] = { "<cmd> q <CR>", "noh", opts = { nowait = false } },
 
@@ -45,9 +61,7 @@ M.general = {
       opts = { nowait = true },
     },
   },
-  t = {
-    ["<Esc><Esc>"] = { "<C-x>", "escape terminal mode", opts = { nowait = false, remap = true } },
-  },
+  t = {},
 }
 
 -- more keybinds!

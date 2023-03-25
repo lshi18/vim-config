@@ -46,7 +46,29 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-  { "lvimuser/lsp-inlayhints.nvim" },
+  {
+    "lvimuser/lsp-inlayhints.nvim",
+    lazy = false,
+    config = function()
+      require("lsp-inlayhints").setup()
+    end,
+  },
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    lazy = false,
+    config = function()
+      require("toggleterm").setup {
+        size = function(term)
+          if term.direction == "horizontal" then
+            return 15
+          elseif term.direction == "vertical" then
+            return vim.o.columns * 0.4
+          end
+        end,
+      }
+    end,
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

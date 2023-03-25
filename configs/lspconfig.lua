@@ -25,7 +25,7 @@ lspconfig.rust_analyzer.setup {
       inlayHints = {
         enable = true,
 
-        parameterHints = {
+        bindingModeHints = {
           enable = true,
         },
       },

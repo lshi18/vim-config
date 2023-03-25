@@ -60,6 +60,7 @@ M.general = {
       "lsp hover document",
       opts = { nowait = true },
     },
+    ["<leader>ti"] = { "<cmd> lua require('lsp-inlayhints').toggle() <CR>", "lsp toggle inlay hints" },
   },
   t = {},
 }

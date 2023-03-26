@@ -7,7 +7,7 @@ M.general = {
     ["<leader>b"] = { "<cmd> noh <CR>", "noh", opts = { nowait = false } },
     ["<leader>h"] = {
       function()
-        return "<cmd> " .. vim.v.count1 .. "ToggleTerm direction=horizontal<CR>"
+        return "<cmd> " .. vim.v.count1 .. "ToggleTerm size=20 direction=horizontal<CR>"
       end,
       --  "<cmd> echo" .. vim.v.count1 .. "<CR>",
       "toggle horizontal terminal",
@@ -15,7 +15,8 @@ M.general = {
     },
     ["<leader>v"] = {
       function()
-        return "<cmd> " .. vim.v.count1 .. "ToggleTerm direction=vertical<CR>"
+        local h = tostring(vim.o.columns * 0.4)
+        return "<cmd> " .. vim.v.count1 .. "ToggleTerm size=" .. h .. " direction=vertical<CR>"
       end,
       --  "<cmd> echo" .. vim.v.count1 .. "<CR>",
       "toggle vertical terminal",
@@ -62,7 +63,10 @@ M.general = {
     },
     ["<leader>ti"] = { "<cmd> lua require('lsp-inlayhints').toggle() <CR>", "lsp toggle inlay hints" },
   },
-  t = {},
+  t = {
+    ["<ESC><ESC>"] = { "<cmd> ToggleTermToggleAll<CR>", "toggle term" },
+    ["00"] = { "<C-x>", "toggle term", opts = { remap = true } },
+  },
 }
 
 -- more keybinds!

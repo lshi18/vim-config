@@ -15,7 +15,7 @@ M.general = {
     },
     ["<leader>v"] = {
       function()
-        local h = tostring(vim.o.columns * 0.4)
+        local h = tostring(vim.o.columns * 0.6)
         return "<cmd> " .. vim.v.count1 .. "ToggleTerm size=" .. h .. " direction=vertical<CR>"
       end,
       --  "<cmd> echo" .. vim.v.count1 .. "<CR>",
@@ -44,7 +44,7 @@ M.general = {
     ["<leader>ss"] = { "<cmd> mksession! <CR>", "save current session", opt = { nowait = false } },
     ["<leader>rs"] = { "<cmd> source Session.vim <CR>", "restore last session", opts = { nowait = false } },
 
-    ["<leader>tt"] = { "<C-n>", "toggle nvtreesitter", opts = { nowait = false, remap = true } },
+    ["<leader>tt"] = { "<C-n>", "toggle nvim-tree", opts = { nowait = false, remap = true } },
 
     ["<leader>."] = { "<C-i>", "go forward", opts = { nowait = false, remap = true } },
     ["<leader>,"] = { "<C-o>", "go back", opts = { nowait = false, remap = true } },

@@ -14,6 +14,7 @@ M.treesitter = {
     "terraform",
     "yaml",
     "hcl",
+    "go",
   },
   indent = {
     enable = true,
@@ -58,6 +59,10 @@ M.nvimtree = {
         git = true,
       },
     },
+  },
+
+  view = {
+    side = "right",
   },
 }
 

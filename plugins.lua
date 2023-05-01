@@ -61,6 +61,16 @@ local plugins = {
       require("toggleterm").setup {}
     end,
   },
+  {
+    "ellisonleao/glow.nvim",
+    config = function()
+      require("glow").setup {
+        width_ratio = 0.9,
+        height_ratio = 0.9,
+      }
+    end,
+    cmd = "Glow",
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
